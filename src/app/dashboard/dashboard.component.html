@@ -1,0 +1,34 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-md-12">
+            <div class="alert alert-info" role="alert" align="center">
+                <h4>Welcome to Daily Notes</h4>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Enter your note below</label>
+                <textarea [(ngModel)]="textInput" class="form-control" id="exampleFormControlTextarea1"
+                    rows="3"></textarea>
+            </div>
+            <button type="button" class="btn btn-info" (click)="addNewNote()">Add Note</button>
+        </div>
+        <div class="col-md-6">
+            <h5>Previous notes</h5>
+            <div *ngIf="noteList.length <= 0">
+                <div class="alert alert-danger" role="alert">
+                    Please add some note to disply
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let item of noteList">{{item}}</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
